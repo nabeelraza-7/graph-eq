@@ -186,4 +186,66 @@ input[type=submit]:hover {
 
 .container-stuff{
     min-height: calc(100vh - 69px);
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%
+}
+.file-upload-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+    background-color: white;
+    width: 49%;
+}
+.equation-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 49%;
+}
+
+@media screen and (max-width: 800px) {
+    .container-stuff{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .file-upload-container{
+        padding-top: 1.6rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .equation-container{
+        width: 100%;
+    }
+}
+.file-upload-field{
+    padding: 1.6rem;
+    border: 4px black dashed;
+}
+@media screen and (max-width: 980px) {
+    .file-upload-field{
+        padding: 0.6rem;
+        border: 4px black dashed;
+    }
+}
+
+.patch{
+    width: 100%;
+}
+.patch input{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 40px;
+    border: 1px #ffffff solid;
+    background-color: rgb(238, 238, 238);
+    padding: 0.6rem;
+    color: rgb(51, 51, 51);
+}
+.equations-form{
+    padding: 1.6rem;
+    width: 100%;
 }
