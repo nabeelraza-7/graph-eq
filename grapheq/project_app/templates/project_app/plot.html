@@ -1,0 +1,23 @@
+{% extends 'project_app/base.html' %}
+{% block content %}
+<main>
+    <div class="container container-stuff">
+        <div class="file-upload-container ld ld-throw-btt-in">
+            <form action="#" method="post">
+                <input class="file-upload-field" type="file" name="image_file" required><br>
+                <center><input type="submit" value="Plot Graph"></center>
+            </form>
+        </div>
+        <div class="equation-container ld ld-throw-btt-in">
+            <form class="equations-form" action="#" method="post">
+                <div class="patch">
+                    <input type="text" placeholder="Equation here..." name="equation" id="" required><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id=""><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id=""><br>
+                </div>
+                <center><input type="submit" value="Plot Graph"></center>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}
