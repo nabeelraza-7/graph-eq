@@ -1,5 +1,6 @@
 {% extends 'project_app/base.html' %}
 {% block title %}
+Graph-Eq | Sign Up
 {% endblock title %}
 {% block content %}
 <main>
@@ -21,7 +22,7 @@
                 </div></center>
                 <center><input class="register" type="submit" value="Register"></center>
             </form>
-            <small>Alredy have an account? <a href="user_login.html">Log In</a></small>
+            <small>Alredy have an account? <a href="{% url 'user_login' %}">Log In</a></small>
         </div>
     </div>
 </main>

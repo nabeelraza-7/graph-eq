@@ -1,5 +1,6 @@
 {% extends 'project_app/base.html' %}
 {% block title %}
+Graph-Eq | Log In
 {% endblock title %}
 {% block content %}
 <main>
@@ -9,7 +10,7 @@
                 <center><input class="input-fields" type="text" placeholder="Username / Email" required></center>
                 <center><input class="input-fields" type="password" name="passwordField" id="passwordField"
                     placeholder="Password"></center>
-                    <small>Don't have an account? <a href="user_register.html">Create an account</a></small>
+                    <small>Don't have an account? <a href="{% url 'user_registration' %}">Create an account</a></small>
                 <center><input class="register" type="submit" value="Log In"></center>
             </form>
         </div>

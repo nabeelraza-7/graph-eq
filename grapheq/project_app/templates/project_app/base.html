@@ -26,7 +26,8 @@
             <a href="{% url 'home' %}" class="active">Home</a>
             <a href="{% url 'plot' %}">Plot</a>
             <a href="#about">About</a>
-            <a href="user_login.html">Log In</a>
+            <a href="{% url 'user_login' %}">Log In</a>
+            <a href="{% url 'user_registration' %}">Sign Up</a>
         </div>
     </header>
     {% block content %}

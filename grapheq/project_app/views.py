@@ -6,3 +6,9 @@ def home(request):
 
 def plot(request):
     return render(request, 'project_app/plot.html')
+
+def user_login(request):
+    return render(request, 'project_app/user_login.html')
+
+def user_registration(request):
+    return render(request, 'project_app/user_registration.html')
