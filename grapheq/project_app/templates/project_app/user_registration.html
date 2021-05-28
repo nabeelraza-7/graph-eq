@@ -1,0 +1,28 @@
+{% extends 'project_app/base.html' %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+<main>
+    <div class="background-transparent">
+        <div class="card ld ld-throw-btt-in">
+            <form action="" method="post">
+                <center><input class="input-fields" type="text" placeholder="Username" required></center>
+                <center><input class="input-fields" type="text" placeholder="First name" required></center>
+                <center><input class="input-fields" type="text" placeholder="Last name" required></center>
+                <center><input class="input-fields" type="email" name="emailField" id="emailField"
+                    placeholder="Email address"></center>
+                <center><input class="input-fields" type="password" name="passwordField1" id="passwordField1"
+                    placeholder="Password"></center>
+                <center><input class="input-fields" type="password" name="passwordField2" id="passwordField2"
+                    placeholder="Confirm Password"></center>
+                <center><div class="terms-conditions">
+                    <label for="agreement">I accept all the terms & conditions</label>
+                    <input class="mr-1" type="checkbox" name="agreement" id="agreement" required>
+                </div></center>
+                <center><input class="register" type="submit" value="Register"></center>
+            </form>
+            <small>Alredy have an account? <a href="user_login.html">Log In</a></small>
+        </div>
+    </div>
+</main>
+{% endblock content %}

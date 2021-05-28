@@ -1,5 +1,9 @@
 {% extends 'project_app/base.html' %}
+{% block title %}
+Graph-Eq | Home Page
+{% endblock title %}
 {% block content %}
+{% load static %}
 <main>
     <div class="grid-container container container1">
         <div class="text-container" width="300px" height="300px">
@@ -9,12 +13,12 @@
             facilis quae possimus aperiam ad ea quaerat soluta natus tenetur. Repellendus, distinctio.
         </div>
         <div class="image ld ld-throw-rtl-in">
-            <img src="car.jpeg" alt="car" height="300px">
+            <img src="{% static '/images/car.jpeg' %}" alt="car" height="300px">
         </div>
     </div>
     <div class="grid-container container container2">
         <div class="image ld ld-throw-ltr-in">
-            <img src="car.jpeg" alt="car" height="300px">
+            <img src="{% static '/images/car.jpeg' %}" alt="car" height="300px">
         </div>
         <div class="text-container" width="300px" height="300px">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi magni, placeat unde obcaecati
