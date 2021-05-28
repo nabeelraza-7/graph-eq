@@ -6,7 +6,7 @@ body{
     margin: 0;
     background-image: linear-gradient(#7700b3, #ff3399);
     color: white;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 header{
     overflow: hidden;
@@ -108,6 +108,9 @@ footer{
     margin-bottom: 0;
     padding-bottom: 0;
     background-color: #3d004d;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 .link-text a{
     color: white;
@@ -129,8 +132,9 @@ footer{
     position: relative;
     width: 400px;
     height: 300px;
-    top: 10%;
+    top: auto;
     left: calc(50% - 200px);
+    /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +161,6 @@ input:focus{
 .background-transparent{
     margin: 2.4rem;
     padding: 1.6rem;
-    min-height: 64vh;
 }
 .terms-conditions{
     display: flex;
@@ -248,4 +251,11 @@ input[type=submit]:hover {
 .equations-form{
     padding: 1.6rem;
     width: 100%;
+}
+main{
+    min-height: calc(100vh - 199px);
+}
+img{
+    width: 100%;
+    height: auto;
 }
