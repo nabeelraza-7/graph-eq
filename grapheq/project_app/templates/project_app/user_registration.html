@@ -7,32 +7,12 @@ Graph-Eq | Sign Up
     <div class="background-transparent">
         <div class="card ld ld-throw-btt-in">
             <form action="" method="post">
-                <!-- <center><input class="input-fields" type="text" placeholder="Username" required></center>
-                <center><input class="input-fields" type="text" placeholder="First name" required></center>
-                <center><input class="input-fields" type="text" placeholder="Last name" required></center>
-                <center><input class="input-fields" type="email" name="emailField" id="emailField"
-                    placeholder="Email address"></center>
-                <center><input class="input-fields" type="password" name="passwordField1" id="passwordField1"
-                    placeholder="Password"></center>
-                <center><input class="input-fields" type="password" name="passwordField2" id="passwordField2"
-                    placeholder="Confirm Password"></center> -->
                 {% csrf_token %}
-                <!-- {{form.username.label}} -->
                 {{form.username}}
-
-                <!-- {{form.first_name.label}} -->
                 {{form.first_name}}
-
-                <!-- {{form.last_name.label}} -->
                 {{form.last_name}}
-
-                <!-- {{form.email.label}} -->
                 {{form.email}}
-
-                <!-- {{form.password1.label}} -->
                 {{form.password1}}
-
-                <!-- {{form.password2.label}} -->
                 {{form.password2}}
 
                 <div class="terms_and_conditions">
