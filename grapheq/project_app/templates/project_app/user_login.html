@@ -7,9 +7,13 @@ Graph-Eq | Log In
     <div class="background-transparent">
         <div class="card1 ld ld-throw-btt-in"  width="300px" height="300px">
             <form action="" method="post">
-                <center><input class="input-fields" type="text" placeholder="Username / Email" required></center>
-                <center><input class="input-fields" type="password" name="passwordField" id="passwordField"
+                {% csrf_token %}
+                <center><input class="input-fields" type="text" name="username" id="username" placeholder="Username" required></center>
+                <center><input class="input-fields" type="password" name="password" id="password"
                     placeholder="Password"></center>
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
                     <small>Don't have an account? <a href="{% url 'user_registration' %}">Create an account</a></small>
                 <center><input class="register" type="submit" value="Log In"></center>
             </form>

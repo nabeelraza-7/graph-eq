@@ -5,6 +5,9 @@ Graph-Eq | Home Page
 {% block content %}
 {% load static %}
 <main>
+    {% if request.user.is_authenticated %}
+    <center><h4 class="text-white mt-2">Hi, {{ request.user }}</h4></center>
+    {% endif %}
     <div class="grid-container container container1">
         <div class="text-container" width="300px" height="300px">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi magni, placeat unde obcaecati
