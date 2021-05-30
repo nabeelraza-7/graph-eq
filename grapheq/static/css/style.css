@@ -59,7 +59,7 @@ header a.logo{
     color: white;
 }
 .image{
-    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+    /* box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26); */
     border-radius: 8px;
     flex: 50%;
 }
