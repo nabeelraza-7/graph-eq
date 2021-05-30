@@ -15,6 +15,16 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+from django.contrib.messages import constants as messages
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary pl-2 text-center rounded',
+        messages.INFO: 'alert-info pl-2 text-center rounded',
+        messages.SUCCESS: 'alert-success pl-2 text-center rounded',
+        messages.WARNING: 'alert-warning pl-2 text-center rounded',
+        messages.ERROR: 'alert-danger pl-2 text-center rounded',
+ }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
