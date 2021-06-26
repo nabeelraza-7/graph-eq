@@ -9,32 +9,35 @@ Graph-Eq | Home Page
     <center><h4 class="text-white mt-2">Hi, {{ request.user }}</h4></center>
     {% endif %}
     <div class="grid-container container container1">
-        <div class="text-container" width="300px" height="300px">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi magni, placeat unde obcaecati
-            dolorum nisi accusamus, provident culpa blanditiis deleniti? Omnis distinctio, porro atque suscipit sit
-            praesentium, deserunt officia incidunt mollitia recusandae, hic laborum at temporibus repudiandae
-            facilis quae possimus aperiam ad ea quaerat soluta natus tenetur. Repellendus, distinctio.
+        <div class="text-container " width="300px" height="300px">
+            This project is dedicated to all those students who have had trouble figuring out the
+            graph of an expression. With the attractive look and feel of the graphs, users can not only 
+            display one, but upto 3 expressions. This could prove helpful in understanding where the lines 
+            intersect, how they exponentially grow, etc. This is an open source project (or will be, soon).
+            Feel free to share your feedback regarding this project at <a class="general-link" href="mailto:razanabeel512@gmail.com">this</a> mail address. ^_^
         </div>
         <div class="image ld ld-throw-rtl-in">
-            <img src="{% static '/images/car.jpeg' %}" alt="car" height="300px">
+            <img src="{% static '/images/g1.jpg' %}" alt="graph1" height="300px">
         </div>
     </div>
     <div class="grid-container container container2">
         <div class="image ld ld-throw-ltr-in">
-            <img src="{% static '/images/car.jpeg' %}" alt="car" height="300px">
+            <img src="{% static '/images/g2.jpg' %}" alt="car" height="300px" loading="lazy">
         </div>
         <div class="text-container" width="300px" height="300px">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quasi magni, placeat unde obcaecati
-            dolorum nisi accusamus, provident culpa blanditiis deleniti? Omnis distinctio, porro atque suscipit sit
-            praesentium, deserunt officia incidunt mollitia recusandae, hic laborum at temporibus repudiandae
-            facilis quae possimus aperiam ad ea quaerat soluta natus tenetur. Repellendus, distinctio.
+            Graph-Eq allows users to not only plot equations using text fields, but also upload a picture of
+            the expression. For now, due to shortage of time, this project is limited to three equations in text fields.
+            And only one in the picture form. In Sha Allah, with the passage of time, we will not only increase the number
+            of equations that can be plotted, but also introduce features like scientific calculations, trigonometric fucntions.
+            Please take a look and the instructions of usage at the bottom of the page.
         </div>
     </div>
     <center>
         <div class="btn-container">
             <a href="{% url 'plot' %}"><input class="button" type="button" value="Start Plotting"></a>
         </div>
-        <h4 class="text-white">How to use?</h4>
+        <div class="text-container">
+            <center><h4 class="text-white">How to use?</h4></center>
         <div class="how-to container">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam pariatur
             repellendus blanditiis vero
             aliquid, minus dolorem facilis at consequuntur consectetur eum vitae laborum. Veritatis natus repellat
@@ -46,6 +49,7 @@ Graph-Eq | Home Page
                 <li>Step 3:</li>
                 <li>Step 4:</li>
             </ul>
+        </div>
         </div>
 
     </center>

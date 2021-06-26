@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 def home(request):
     return render(request, 'project_app/index.html')
 
+def about_page(request):
+    return render(request, "project_app/about_page.html")
+
 def plot(request):
     equations_from_fields = request.POST.getlist('equation')
     if len(equations_from_fields) != 0:
@@ -20,6 +23,9 @@ def plot_eq_fields(equations_from_fields):
 
 def plot_eq_image(image):
     print("Image here...", image)
+
+def show_results(request):
+    return render(request, 'project_app/results.html')
 
 def user_login(request):
     if request.user.is_authenticated:
