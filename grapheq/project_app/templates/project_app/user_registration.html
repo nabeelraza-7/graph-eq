@@ -44,18 +44,19 @@
 
             // Query All input fields
             var form_fields = document.getElementsByTagName('input')
-            form_fields[1].placeholder = 'Username';
-            form_fields[2].placeholder = 'First Name';
-            form_fields[3].placeholder = 'Last Name';
-            form_fields[4].placeholder = 'Email';
-            form_fields[5].placeholder = 'Enter password';
-            form_fields[6].placeholder = 'Re-enter Password';
+            console.log(form_fields[0]);
+            form_fields[2].placeholder = 'Username';
+            form_fields[3].placeholder = 'First Name';
+            form_fields[4].placeholder = 'Last Name';
+            form_fields[5].placeholder = 'Email';
+            form_fields[6].placeholder = 'Enter password';
+            form_fields[7].placeholder = 'Re-enter Password';
 
             for (var field in form_fields) {
                 form_fields[field].className += ' input-fields'
             }
-            form_fields[7].className = 'terms_and_conditions';
-            form_fields[8].className = "register"
+            // form_fields[7].className = 'terms_and_conditions';
+            form_fields[8].className = "register";
 
         </script>
     </main>

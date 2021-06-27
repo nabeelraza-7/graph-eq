@@ -2,20 +2,6 @@
     box-sizing: border-box;
 }
 
-
-.header-right{
-    float:right;
-}
-@media screen and (max-width: 560px) {
-    header a{
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    .header-right{
-        float:none;
-    }
-}
 .grid-container{
     margin: 5rem 0;
     display: flex;
@@ -81,17 +67,17 @@ form input:focus{
 }
 input[type=submit] {
     color: white;
-    background-color: #7700b3;
+    background-color: #0099FF;
     border-radius: 20px;
     padding: 0.6rem 0.8rem;
     margin: 0.8rem 0;
     border: none;
 }
 input[type=submit]:hover {
-    background: #9324ca;
+    background: #0099FF;
     text-decoration: none;
     transform: scale(1.1);
-    box-shadow: 0 0 30px 3px #9324ca;
+    box-shadow: 0 0 30px 3px #0099FF;
 }
 
 .container-stuff{

@@ -13,6 +13,7 @@ def plot(request):
     equations_from_fields = request.POST.getlist('equation')
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
+        render(request, 'project_app/results.html')
     else:
         image = request.POST.getlist('image_file')
         plot_eq_image(image)
