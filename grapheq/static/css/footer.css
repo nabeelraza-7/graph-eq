@@ -1,0 +1,23 @@
+
+footer{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #0099FF;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+}
+.info-team{
+    padding: 0.6rem;
+    color: white;
+    width: 30vw;
+}

@@ -2,46 +2,6 @@
     box-sizing: border-box;
 }
 
-.general-link{
-    text-decoration: none !important;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-.general-link a:hover {
-    text-decoration: none !important;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-body{
-    margin: 0;
-    background-image: linear-gradient(#7700b3, #ff3399);
-    color: white;
-    /* min-height: 100vh; */
-}
-header{
-    overflow: hidden;
-    background-color: #3d004d;
-    padding: 20px 10px;
-}
-header a{
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-}
-header a:hover{
-    text-decoration: none;
-    color: white;
-    background-color: #8a239e;
-}
-header a.logo{
-    font-size: 25px;
-    font-weight: bold;
-}
 
 .header-right{
     float:right;
@@ -61,74 +21,7 @@ header a.logo{
     display: flex;
     flex-wrap: wrap;
 }
-.text-container{
-    flex: 50%;
-    padding: 2rem 2rem;
-    text-indent: 1.6rem;
-    text-align: justify;
-    color: white;
-    font-family: Poppins;
-    font-size: 14pt !important;
-}
-.image{
-    /* box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26); */
-    border-radius: 8px;
-    flex: 50%;
-}
-@media screen and (max-width: 800px) {
-    .container1{
-        margin: 0 5rem;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .container2{
-        flex-wrap: wrap-reverse;
-        margin-bottom: 2rem;
-    }
-}
-.btn-container{
-    width: 100%;
-    padding-bottom: 4rem;
-}
-.button {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    -webkit-box-shadow: 0px 0px 21px #83d7e6;
-    -moz-box-shadow: 0px 0px 21px #83d7e6;
-    box-shadow: 0px 0px 21px #83d7e6;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 23px;
-    background: #3498db;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    border: 0px;
-}
 
-.button:hover {
-    background: #3cb0fd;
-    text-decoration: none;
-    transform: scale(1.1);
-    /* padding: 12px 22px 12px 22px; */
-}
-.how-to{
-    text-align: justify;
-    color: white;
-}
-
-footer{
-    margin-bottom: 0;
-    padding-bottom: 0;
-    background-color: #3d004d;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-.link-text a{
-    color: white;
-
-}
 .card{
     position: relative;
     width: 400px;
@@ -266,16 +159,7 @@ input[type=submit]:hover {
     padding: 1.6rem;
     width: 100%;
 }
-main{
-    min-height: calc(100vh - 199px);
-}
-img{
-    width: 100%;
-    height: auto;
-}
-img:hover{
-    transform: scale(1.1);
-}
+
 #agreement{
     margin-right: 1rem;
 }

@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+.svg-background{
+    position: absolute; 
+    top: 60px;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    z-index: -1;
+}
+
+main{
+    min-height: 100vh;
+}
+.centralized-text{
+    text-align: center;
+    padding-top: 25%;
+    height: 50vh;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+/* Description .... */
+
+.grid-box{
+    display: flex;
+    margin: 2.5rem 0;
+}
+
+.second-container{
+    display: flex;
+    margin: 2.5rem 0;
+}
+@media screen and (max-width: 930px) {
+    .grid-box{
+        flex-wrap: wrap;
+    }
+    .second-container{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+}
+.text-container{
+    flex: 50%;
+    padding: 4rem;
+    margin-top: 2rem;
+    font-size: 14pt;
+}
+.image-1{
+    border-radius: 30% 70% 70% 30% / 30% 34% 66% 70% ;
+    height: 400px;
+    width: 400px;
+    background-color: aquamarine;
+    flex: 50%;
+    margin: 5rem;
+}
+.image-2{
+    border-radius: 45% 55% 20% 80% / 69% 34% 66% 31%  ; 
+    width: 400px;
+    height: 400px;
+    background-color: aquamarine;
+    flex: 50%;
+    margin: 5rem;
+}
+.image-1:hover, .image-2:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.image-holder{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+/* BUTTON */
+.btn-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+.button {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    -webkit-box-shadow: 0px 0px 21px #83d7e6;
+    -moz-box-shadow: 0px 0px 21px #83d7e6;
+    box-shadow: 0px 0px 21px #83d7e6;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 23px;
+    background: #3498db;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 0px;
+}
+
+.button:hover {
+    background: #0099FF;
+    text-decoration: none;
+    transform: scale(1.1);
+    /* padding: 12px 22px 12px 22px; */
+}
+
+/* Instructions */
+.instructions{
+    margin: auto;
+    padding: 4rem;
+}
+code {
+    color: white !important;
+    background-color: gray;
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+}
