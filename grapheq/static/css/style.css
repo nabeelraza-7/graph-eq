@@ -1,13 +1,7 @@
 *{
     box-sizing: border-box;
 }
-
-.grid-container{
-    margin: 5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
+/* user_registration.html */
 .card{
     position: relative;
     width: 400px;
@@ -19,6 +13,7 @@
     box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
     background-color: black;
 }
+/* user_login.html */
 .card1{
     position: relative;
     width: 400px;
@@ -32,6 +27,8 @@
     background-color: white;
 
 }
+/* user_registration.html */
+/* user_login.html */
 .input-fields{
     display: block;
     width: 100%;
@@ -42,6 +39,8 @@
     padding: 0.6rem;
     color: rgb(51, 51, 51);
 }
+/* user_registration.html */
+/* user_login.html */
 .input-fields::placeholder{
     color: rgb(102, 102, 102);
 }
@@ -79,7 +78,7 @@ input[type=submit]:hover {
     transform: scale(1.1);
     box-shadow: 0 0 30px 3px #0099FF;
 }
-
+/* In user_registration.html */
 .container-stuff{
     min-height: calc(100vh - 69px);
     margin: 2rem;

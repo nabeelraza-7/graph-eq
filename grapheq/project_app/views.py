@@ -11,13 +11,15 @@ def about_page(request):
 
 def plot(request):
     equations_from_fields = request.POST.getlist('equation')
+    image = request.POST.getlist('image_file')
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
-        render(request, 'project_app/results.html')
-    else:
-        image = request.POST.getlist('image_file')
+        return render(request, 'project_app/results.html')
+    elif len(image) != 0 :
         plot_eq_image(image)
+        return render(request, 'project_app/results.html')
     return render(request, 'project_app/plot.html')
+    
 
 def plot_eq_fields(equations_from_fields):
     print("Equation here...", equations_from_fields)
