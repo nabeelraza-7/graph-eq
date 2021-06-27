@@ -3,6 +3,23 @@
     Graph-Ex | Sign Up
 {% endblock title %}
 {% block content %}
+<style>
+    input[type=submit] {
+    color: white;
+    background-color: #0099FF;
+    border-radius: 20px;
+    padding: 0.6rem 0.8rem;
+    margin: 0.8rem 0;
+    border: none;
+}
+input[type=submit]:hover {
+    background: #0099FF;
+    text-decoration: none;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px 3px #0099FF;
+}
+
+</style>
     <main>
         <div class="svg-background">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 320">
@@ -44,7 +61,7 @@
 
             // Query All input fields
             var form_fields = document.getElementsByTagName('input')
-            console.log(form_fields[0]);
+            console.log(form_fields[8]);
             form_fields[2].placeholder = 'Username';
             form_fields[3].placeholder = 'First Name';
             form_fields[4].placeholder = 'Last Name';
@@ -55,8 +72,8 @@
             for (var field in form_fields) {
                 form_fields[field].className += ' input-fields'
             }
-            // form_fields[7].className = 'terms_and_conditions';
-            form_fields[8].className = "register";
+            form_fields[8].className = 'terms_and_conditions';
+            form_fields[9].className = "register";
 
         </script>
     </main>
