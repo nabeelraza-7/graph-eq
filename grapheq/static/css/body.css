@@ -115,3 +115,9 @@ code {
     padding: 0.2rem 0.4rem;
     border-radius: 2px;
 }
+/* RESULTSS */
+.plot-image{
+    border-radius: 40px;
+    background-color: black;
+    padding: 8px;
+}

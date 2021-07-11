@@ -1,7 +1,20 @@
+import os
+import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+
+from .Solution import Solution
+
+plt.style.use('seaborn-darkgrid')
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large', titleweight='bold', titlesize=18, titlepad=10)
 
 def home(request):
     return render(request, 'project_app/index.html')
@@ -12,6 +25,8 @@ def about_page(request):
 def plot(request):
     equations_from_fields = request.POST.getlist('equation')
     image = request.POST.getlist('image_file')
+    if os.path.exists('file/directory'):
+        os.remove("project_app/plot.png")
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
         return render(request, 'project_app/results.html')
@@ -22,7 +37,22 @@ def plot(request):
     
 
 def plot_eq_fields(equations_from_fields):
-    print("Equation here...", equations_from_fields)
+    for i in equations_from_fields:
+        if i == "": continue
+        # solve_for_plot(i)
+        string = i
+        plot = []
+        for j in range(-500, 500):
+            s = Solution(string.replace("x", str(j)))
+            try:
+                temp = np.float32(s.solve())
+                plot.append(temp)
+            except Exception:
+                plot.append(np.nan)
+        plot = pd.DataFrame({"result": plot})
+        plt.plot(plot)
+        plt.savefig("static/plot.png", edgecolor="none")
+    plt.close()
 
 def plot_eq_image(image):
     print("Image here...", image)
