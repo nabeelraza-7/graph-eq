@@ -23,6 +23,16 @@ main{
     margin-bottom: 3rem !important;
 }
 
+@media screen and (max-widht: 800px) {
+    .centralized-text{
+        text-align: center;
+        padding-top: 15%;
+        height: 30vh;
+        font-size: 24pt;
+        font-weight: bold;
+        margin-bottom: 0.5rem !important;
+    }
+}
 /* Description .... */
 
 .grid-box{
@@ -34,7 +44,7 @@ main{
     display: flex;
     margin: 2.5rem 0;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 950px) {
     .grid-box{
         flex-wrap: wrap;
     }
@@ -48,6 +58,7 @@ main{
     padding: 4rem;
     margin-top: 2rem;
     font-size: 14pt;
+    text-align: justify;
 }
 .image-1{
     border-radius: 30% 70% 70% 30% / 30% 34% 66% 70% ;
