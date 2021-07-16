@@ -38,13 +38,19 @@ input[type=submit]:hover {
             <form class="equations-form" action="" method="post">
                 {% csrf_token %}
                 <div class="patch">
-                    <input type="text" placeholder="Equation here..." name="equation" id="e1" required><br>
-                    <input type="text" placeholder="Equation here..." name="equation" id="e2"><br>
-                    <input type="text" placeholder="Equation here..." name="equation" id="e3"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e1" required oninput="restrict(this)"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e2" oninput="restrict(this)"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e3" oninput="restrict(this)"><br>
                 </div>
                 <center><input type="submit" value="Plot Graph"></center>
             </form>
         </div>
     </div>
 </main>
+<script>
+    function restrict(input) {
+        var regex = /[^0-9x//*()+-^]/gi;
+        input.value = input.value.replace(regex, "");
+    }
+</script>
 {% endblock content %}
