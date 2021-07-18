@@ -31,17 +31,15 @@ def plot(request):
         os.remove("static/plot.png")
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
-        return render(request, 'project_app/results.html')
+        return show_results(request)
     elif len(request.FILES) != 0 :
         uploaded_file = request.FILES['image_file']
         fs = FileSystemStorage()
         if os.path.exists('media/image.jpeg'):
-            # print("does this work?")
             os.remove("media/image.jpeg")
-        name = fs.save("image.jpeg", uploaded_file)
-        print(name)
+        fs.save("image.jpeg", uploaded_file)
         plot_eq_image()
-        # return render(request, 'project_app/results.html')
+        return show_results(request)
     return render(request, 'project_app/plot.html')
 
     
@@ -65,7 +63,20 @@ def plot_eq_fields(equations_from_fields):
     plt.close()
 
 def plot_eq_image():
-    print(predict_ex("image.jpeg"))
+    text =predict_ex()
+    print(text)
+    plot = []
+    for j in range(-500, 500):
+        s = Solution(text.replace("x", "(" + str(j) + ")"))
+        try:
+            temp = np.float32(s.solve())
+            plot.append(temp)
+        except Exception:
+            plot.append(np.nan)
+    plot = pd.DataFrame({"result": plot})
+    plt.plot(plot)
+    plt.savefig("static/plot.png", edgecolor="none")
+    plt.close()
 
 def show_results(request):
     return render(request, 'project_app/results.html')

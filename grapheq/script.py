@@ -40,8 +40,8 @@ def remove_duplicates(lst):
             result.append(i)
     return result
 
-def predict_ex(file):
-    img = cv.imread(file)
+def predict_ex():
+    img = cv.imread("media/image.jpeg")
     src_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     src_gray = cv.blur(src_gray, (3, 3))
     thresh = 127
