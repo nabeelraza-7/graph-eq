@@ -28,7 +28,7 @@ input[type=submit]:hover {
     </div>
     <div class="container container-stuff">
         <div class="file-upload-container ld ld-throw-btt-in">
-            <form action="#" method="post">
+            <form enctype="multipart/form-data" method="post" action="#">
                 {% csrf_token %}
                 <input class="file-upload-field" type="file" name="image_file" required><br>
                 <center><input type="submit" value="Plot Graph"></center>

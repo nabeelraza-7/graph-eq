@@ -1,4 +1,5 @@
 import os
+import urllib.request
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -9,6 +10,7 @@ from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.core.files.storage import FileSystemStorage
 
 from .Solution import Solution
 from script import predict_ex
@@ -25,16 +27,23 @@ def about_page(request):
 
 def plot(request):
     equations_from_fields = request.POST.getlist('equation')
-    image = request.POST.getlist('image_file')
-    if os.path.exists('file/directory'):
-        os.remove("project_app/plot.png")
+    if os.path.exists('static/plot.png'):
+        os.remove("static/plot.png")
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
         return render(request, 'project_app/results.html')
-    elif len(image) != 0 :
-        plot_eq_image(image)
-        return render(request, 'project_app/results.html')
+    elif len(request.FILES) != 0 :
+        uploaded_file = request.FILES['image_file']
+        fs = FileSystemStorage()
+        if os.path.exists('media/image.jpeg'):
+            # print("does this work?")
+            os.remove("media/image.jpeg")
+        name = fs.save("image.jpeg", uploaded_file)
+        print(name)
+        plot_eq_image()
+        # return render(request, 'project_app/results.html')
     return render(request, 'project_app/plot.html')
+
     
 
 def plot_eq_fields(equations_from_fields):
@@ -55,9 +64,8 @@ def plot_eq_fields(equations_from_fields):
         plt.savefig("static/plot.png", edgecolor="none")
     plt.close()
 
-def plot_eq_image(image):
-    print(predict_ex(image[0]))
-    print("Image here...", image)
+def plot_eq_image():
+    print(predict_ex("image.jpeg"))
 
 def show_results(request):
     return render(request, 'project_app/results.html')
