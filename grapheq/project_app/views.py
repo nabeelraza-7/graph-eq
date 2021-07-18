@@ -67,7 +67,7 @@ def plot_eq_image():
     print(text)
     plot = []
     for j in range(-500, 500):
-        s = Solution(text.replace("x", "(" + str(j) + ")"))
+        s = Solution(text.replace("x", "("+str(j)+")"))
         try:
             temp = np.float32(s.solve())
             plot.append(temp)
