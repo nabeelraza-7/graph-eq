@@ -11,6 +11,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 from .Solution import Solution
+from script import predict_ex
 
 plt.style.use('seaborn-darkgrid')
 plt.rc('figure', autolayout=True)
@@ -55,6 +56,7 @@ def plot_eq_fields(equations_from_fields):
     plt.close()
 
 def plot_eq_image(image):
+    print(predict_ex(image[0]))
     print("Image here...", image)
 
 def show_results(request):
