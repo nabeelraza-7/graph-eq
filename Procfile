@@ -1,0 +1,1 @@
+web: gunicorn grapheq.grapheq.wsgi --log-file -
