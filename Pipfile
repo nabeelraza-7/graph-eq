@@ -8,7 +8,7 @@ django = "*"
 numpy = "*"
 opencv-python = "*"
 matplotlib = "*"
-tensorflow = "*"
+tensorflow-cpu = "*"
 
 [dev-packages]
 
