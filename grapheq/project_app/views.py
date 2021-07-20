@@ -1,7 +1,6 @@
 import os
-import urllib.request
 import numpy as np
-import pandas as pd
+# import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -67,7 +66,7 @@ def plot_eq_fields(equations_from_fields):
                 plot.append(temp)
             except Exception:
                 plot.append(np.nan)
-        plot = pd.DataFrame({"result": plot})
+        # plot = pd.DataFrame({"result": plot})
         plt.plot(plot)
         plt.savefig("static/plot.png", edgecolor="none")
     plt.close()
@@ -82,7 +81,6 @@ def plot_eq_image():
             plot.append(temp)
         except Exception:
             plot.append(np.nan)
-    plot = pd.DataFrame({"result": plot})
     plt.plot(plot)
     plt.savefig("static/plot.png", edgecolor="none")
     plt.close()

@@ -5,15 +5,6 @@ name = "pypi"
 
 [packages]
 django = "*"
-numpy = "*"
-pandas = "*"
-matplotlib = "*"
-opencv-python = "*"
-tensorflow = "*"
-gunicorn = "*"
-dj-database-url = "*"
-whitenoise = "*"
-psycopg2 = "*"
 
 [dev-packages]
 
