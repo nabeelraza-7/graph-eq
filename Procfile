@@ -1,1 +1,1 @@
-web: gunicorn grapheq.grapheq.wsgi --log-file -
+web: gunicorn grapheq.wsgi --log-file -
