@@ -3,7 +3,7 @@ from . import views
 
 # custome urls
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('/', views.home, name='home'),
     path('plot/', views.plot, name='plot'),
     path('about/', views.about_page, name='about'),
     path('results/', views.show_results, name="results"),
