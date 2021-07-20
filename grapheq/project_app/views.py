@@ -31,15 +31,22 @@ def plot(request):
         os.remove("static/plot.png")
     if len(equations_from_fields) != 0:
         plot_eq_fields(equations_from_fields)
-        return show_results(request)
+        title = ""
+        for i in equations_from_fields:
+            if i == "": continue
+            title += i + ", "
+        context = {"title": title}
+        return show_results(request, context)
     elif len(request.FILES) != 0 :
         uploaded_file = request.FILES['image_file']
         fs = FileSystemStorage()
         if os.path.exists('media/image.jpeg'):
             os.remove("media/image.jpeg")
         fs.save("image.jpeg", uploaded_file)
-        plot_eq_image()
-        return show_results(request)
+        detected = plot_eq_image()
+        print(detected)
+        context = {"title": detected}
+        return show_results(request, context)
     return render(request, 'project_app/plot.html')
 
     
@@ -64,7 +71,7 @@ def plot_eq_fields(equations_from_fields):
 
 def plot_eq_image():
     text =predict_ex()
-    print(text)
+    # print(text)
     plot = []
     for j in range(-500, 500):
         s = Solution(text.replace("x", "("+str(j)+")"))
@@ -77,9 +84,10 @@ def plot_eq_image():
     plt.plot(plot)
     plt.savefig("static/plot.png", edgecolor="none")
     plt.close()
+    return text
 
-def show_results(request):
-    return render(request, 'project_app/results.html')
+def show_results(request, context):
+    return render(request, 'project_app/results.html', context)
 
 def user_login(request):
     if request.user.is_authenticated:

@@ -14,6 +14,11 @@ Graph-Ex | Home Page
         Like Most misery,<br>
         It Started With Happiness
     </div>
+    <center>
+        {% if request.user.is_authenticated %}
+            <h1>Welcome, {{ request.user }}</h1>
+        {% endif %}
+    </center>
     <div class="grid-box">
         <div class="text-container">
             This project is dedicated to all those students who have had trouble figuring out the
