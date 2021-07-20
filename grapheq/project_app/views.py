@@ -116,9 +116,11 @@ def user_registration(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
+            print(user)
             messages.success(request, "Account successfully created for: " + user)
             return redirect('user_login')
         else:
+            print(messages)
             messages.error(request, "You filled the data wrong")
     context = {'form':form}
     return render(request, 'project_app/user_registration.html', context)
