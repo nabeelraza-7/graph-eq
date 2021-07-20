@@ -12,28 +12,28 @@ class Solution:
         self.op_stack = []
         self._allowed_operators = ["+", "-", "/", "*", "^"]
         self.processed = self.preprocess()
-        # print(self.processed)
+        
 
     def preprocess(self):
         processed = []
         word = ""
         start_num = False
         for i in range(len(self.expression)):
-            # print(self.expression[i])
+            
             if self.expression[i] == "x" or self.expression[i] == "X":
                 processed.append("x")
             elif self.expression[i] == " ":
                 if word == "-":
                     continue
                 else:
-                    # print("WORD: ", word)
+                    
                     if word != "":
                         processed.append(float(word))
                     start_num = False
                     word = ""
             elif self.expression[i].isnumeric() or self.expression[i] == "." or self.expression[i] == "-":
                 if (len(processed) != 0 and processed[-1] != "(" and processed[-1] != "/" and processed[-1] != "+" and processed[-1] != "*" and processed[-1] != "^") and self.expression[i] == '-':
-                    # print(processed[-1], len(processed))
+                   
                     processed.append("+")
                 start_num = True
                 word += self.expression[i]
@@ -48,7 +48,6 @@ class Solution:
             processed.append(float(word))
         start_num = False
         word = ""
-        # print(processed)
         return processed
 
 
@@ -70,8 +69,6 @@ class Solution:
         if op == "+":
             result = operand2 + operand1
         elif op == "^":
-            # print("\t", self.processed)
-            # print("Operand2:", operand2, "Operand1:", operand1)
             result = operand2**operand1
         elif op == "-":
             result = operand2 - operand1
@@ -101,7 +98,6 @@ class Solution:
         Solves the expression passed in.
         """
         for ch in self.processed:
-            # if ch.isnumeric():
             if type(ch) == float:
                 self.value_stack.append(ch)
             if ch =="(":
@@ -116,8 +112,6 @@ class Solution:
                 self.op_stack.append(ch)
         while len(self.op_stack) != 0:
             self._solve_atomic_expression()
-        # print(self.op_stack)
-        # print(self.value_stack)
         return self.value_stack.pop()
 
 
@@ -127,16 +121,12 @@ if __name__ == "__main__":
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
-    # plot = pd.DataFrame({"result": plot})
-    # print(plot.dtypes)
     for i in range(-500, 500):
         s = Solution(string.replace("x", "(" + str(i) + ")"))
         try:
             temp = np.float32(s.solve())
-            # plot['result'].append(temp)
             plot.append(temp)
         except ZeroDivisionError:
-            # plot['result'].append(np.nan)
             plot.append(np.nan)
     plot = pd.DataFrame({"result": plot})
     print(plot)

@@ -15,6 +15,7 @@ from django.core.files.storage import FileSystemStorage
 from .Solution import Solution
 from script import predict_ex
 
+# adding styles
 plt.style.use('seaborn-darkgrid')
 plt.rc('figure', autolayout=True)
 plt.rc('axes', labelweight='bold', labelsize='large', titleweight='bold', titlesize=18, titlepad=10)
@@ -27,6 +28,8 @@ def about_page(request):
 
 def plot(request):
     equations_from_fields = request.POST.getlist('equation')
+    
+    # deleting plot.png if already exists 
     if os.path.exists('static/plot.png'):
         os.remove("static/plot.png")
     if len(equations_from_fields) != 0:
@@ -40,6 +43,7 @@ def plot(request):
     elif len(request.FILES) != 0 :
         uploaded_file = request.FILES['image_file']
         fs = FileSystemStorage()
+        # deleting image.jpeg if already exists
         if os.path.exists('media/image.jpeg'):
             os.remove("media/image.jpeg")
         fs.save("image.jpeg", uploaded_file)
@@ -54,7 +58,6 @@ def plot(request):
 def plot_eq_fields(equations_from_fields):
     for i in equations_from_fields:
         if i == "": continue
-        # solve_for_plot(i)
         string = i
         plot = []
         for j in range(-500, 500):
@@ -71,7 +74,6 @@ def plot_eq_fields(equations_from_fields):
 
 def plot_eq_image():
     text =predict_ex()
-    # print(text)
     plot = []
     for j in range(-500, 500):
         s = Solution(text.replace("x", "("+str(j)+")"))
@@ -90,6 +92,7 @@ def show_results(request, context):
     return render(request, 'project_app/results.html', context)
 
 def user_login(request):
+    # if user is loggedin go to home page
     if request.user.is_authenticated:
         return redirect('home')
     if request.method == 'POST':
@@ -108,6 +111,7 @@ def user_logout(request):
     return redirect('user_login')
 
 def user_registration(request):
+    # if user is loggedin go to home page
     if request.user.is_authenticated:
         return redirect('home')
     form = CreateUserForm()
