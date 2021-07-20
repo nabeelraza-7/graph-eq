@@ -6,11 +6,11 @@ name = "pypi"
 [packages]
 django = "*"
 numpy = "*"
-matplotlib = "*"
 opencv-python = "*"
+matplotlib = "*"
 tensorflow = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.9"
