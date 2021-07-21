@@ -10,6 +10,9 @@ opencv-python = "*"
 matplotlib = "*"
 tensorflow-cpu = "*"
 gunicorn = "*"
+dj-database-url = "*"
+whitenoise = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
