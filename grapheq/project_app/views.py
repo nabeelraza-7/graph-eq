@@ -59,7 +59,7 @@ def plot_eq_fields(equations_from_fields):
         if i == "": continue
         string = i
         plot = []
-        for j in range(-500, 500):
+        for j in range(-500, 501):
             s = Solution(string.replace("x", str(j)))
             try:
                 temp = np.float32(s.solve())
@@ -67,21 +67,23 @@ def plot_eq_fields(equations_from_fields):
             except Exception:
                 plot.append(np.nan)
         # plot = pd.DataFrame({"result": plot})
-        plt.plot(plot)
+        plt.plot(range(-500, 501), plot)
+        plt.xticks([-600, -400, -200, 0, 200, 400, 600])
         plt.savefig("static/plot.png", edgecolor="none")
     plt.close()
 
 def plot_eq_image():
     text =predict_ex()
     plot = []
-    for j in range(-500, 500):
+    for j in range(-500, 501):
         s = Solution(text.replace("x", "("+str(j)+")"))
         try:
             temp = np.float32(s.solve())
             plot.append(temp)
         except Exception:
             plot.append(np.nan)
-    plt.plot(plot)
+    plt.plot(range(-500, 501), plot)
+    plt.xticks([-600, -400, -200, 0, 200, 400, 600])
     plt.savefig("static/plot.png", edgecolor="none")
     plt.close()
     return text
