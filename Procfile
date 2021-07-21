@@ -1,1 +1,1 @@
-web: gunicorn grapheq.grapheq.wsgi --log-file -
+web: gunicorn --chdir grapheq grapheq.wsgi --log-file -
