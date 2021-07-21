@@ -19,18 +19,19 @@ class Solution:
         word = ""
         start_num = False
         for i in range(len(self.expression)):
-            
+            if self.expression[i] == "-" and word != "":
+                processed.append(float(word))
+                processed.append("-")
+                start_num = False
+                word = ""
+                continue
             if self.expression[i] == "x" or self.expression[i] == "X":
                 processed.append("x")
             elif self.expression[i] == " ":
-                if word == "-":
-                    continue
-                else:
-                    
-                    if word != "":
-                        processed.append(float(word))
-                    start_num = False
-                    word = ""
+                if word != "":
+                    processed.append(float(word))
+                start_num = False
+                word = ""
             elif self.expression[i].isnumeric() or self.expression[i] == "." or self.expression[i] == "-":
                 if (len(processed) != 0 and processed[-1] != "(" and processed[-1] != "/" and processed[-1] != "+" and processed[-1] != "*" and processed[-1] != "^") and self.expression[i] == '-':
                    
@@ -46,8 +47,6 @@ class Solution:
                 processed.append(self.expression[i])
         if word != "":
             processed.append(float(word))
-        start_num = False
-        word = ""
         return processed
 
 
@@ -116,19 +115,14 @@ class Solution:
 
 
 if __name__ == "__main__":
-    string = "x^2"
+    string = "6-14"
     plot = []
-    import pandas as pd
     import numpy as np
-    import matplotlib.pyplot as plt
-    for i in range(-500, 500):
+    for i in range(-500, 500+1):
         s = Solution(string.replace("x", "(" + str(i) + ")"))
         try:
             temp = np.float32(s.solve())
             plot.append(temp)
         except ZeroDivisionError:
             plot.append(np.nan)
-    plot = pd.DataFrame({"result": plot})
     print(plot)
-    plt.plot(plot)
-    plt.show()
