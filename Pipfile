@@ -9,6 +9,7 @@ numpy = "*"
 opencv-python = "*"
 matplotlib = "*"
 tensorflow-cpu = "*"
+gunicorn = "*"
 
 [dev-packages]
 
