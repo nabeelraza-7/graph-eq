@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^zl$((nm4je!j&&a30rs2k)_44z@^po_w%zpjnc@ls$uoix53f
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['herokudjangoapp.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['graphex.herokuapp.com', 'localhost']
 
 
 # Application definition
