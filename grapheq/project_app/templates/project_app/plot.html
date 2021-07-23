@@ -39,9 +39,9 @@ input[type=submit]:hover {
             <form class="equations-form" action="" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="patch">
-                    <input type="text" placeholder="Equation here..." name="equation" id="e1" required oninput="restrict(this)"><br>
-                    <input type="text" placeholder="Equation here..." name="equation" id="e2" oninput="restrict(this)"><br>
-                    <input type="text" placeholder="Equation here..." name="equation" id="e3" oninput="restrict(this)"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e1" required oninput="restrict(this)" autocomplete="off"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e2" oninput="restrict(this)" autocomplete="off"><br>
+                    <input type="text" placeholder="Equation here..." name="equation" id="e3" oninput="restrict(this)" autocomplete="off"><br>
                 </div>
                 <center><input type="submit" value="Plot Graph"></center>
             </form>
