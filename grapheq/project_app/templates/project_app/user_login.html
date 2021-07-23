@@ -32,7 +32,7 @@ input[type=submit]:hover {
         </div>
         <div class="background-transparent">
             <div class="card1 ld ld-throw-btt-in" width="300px" height="300px">
-                <form action="" method="post">
+                <form action="" method="post" autocomplete="off">
                     {% csrf_token %}
                     <center><input class="input-fields" type="text" name="username" id="username" placeholder="Username" required></center>
                     <center><input class="input-fields" type="password" name="password" id="password" placeholder="Password"></center>

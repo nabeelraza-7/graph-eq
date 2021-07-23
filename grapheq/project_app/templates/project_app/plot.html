@@ -29,14 +29,14 @@ input[type=submit]:hover {
     <!-- main container -->
     <div class="container container-stuff">
         <div class="file-upload-container ld ld-throw-btt-in">
-            <form enctype="multipart/form-data" method="post" action="#">
+            <form enctype="multipart/form-data" method="post" action="#" autocomplete="off">
                 {% csrf_token %}
                 <input class="file-upload-field" type="file" name="image_file" required><br>
                 <center><input type="submit" value="Plot Graph"></center>
             </form>
         </div>
         <div class="equation-container ld ld-throw-btt-in">
-            <form class="equations-form" action="" method="post">
+            <form class="equations-form" action="" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="patch">
                     <input type="text" placeholder="Equation here..." name="equation" id="e1" required oninput="restrict(this)"><br>

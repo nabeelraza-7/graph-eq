@@ -31,7 +31,7 @@ input[type=submit]:hover {
         {% endfor %}
         <div class="background-transparent">
             <div class="card ld ld-throw-btt-in">
-                <form action="" method="post">
+                <form action="" method="post" autocomplete="off">
                     {% csrf_token %}
                     {{form.username}}
                     {{form.first_name}}
