@@ -6,7 +6,7 @@ import tensorflow as tf
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 class_names = ['(',')','+','-','0','1','2','3','4','5','6','7','8','9','x','*','^','/']
 
-model = tf.keras.models.load_model("./multiclass_verification_model")
+model = tf.keras.models.load_model("/grapheq/multiclass_verification_model")
 # print(model.summary())
 class Rect:
     def __init__(self, t):
