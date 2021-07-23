@@ -5,8 +5,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # or any {'0', '1', '2'}
 import tensorflow as tf
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 class_names = ['(',')','+','-','0','1','2','3','4','5','6','7','8','9','x','*','^','/']
-
-model = tf.keras.models.load_model("/graphex/multiclass_verification_model")
+print(os.getcwd())
+model = tf.keras.models.load_model("multiclass_verification_model")
 # print(model.summary())
 class Rect:
     def __init__(self, t):
